@@ -7,3 +7,14 @@ window.addEventListener('scroll', function(){
   }
 })
 
+let navVisible = document.querySelector('.nav-menu');
+let menuToggle = document.querySelector('.fa-bars');
+let menuClose = document.querySelector('.fa-times');
+
+menuToggle.onclick=() =>{
+  navVisible.classList.add('active');
+}
+menuClose.onclick=() =>{
+  navVisible.classList.remove('active');
+}
+

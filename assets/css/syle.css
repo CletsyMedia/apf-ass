@@ -41,6 +41,7 @@ html {
 
 body {
   font-family: 'Manrope', sans-serif;
+  overflow-x: hidden;
 }
 :root {
   --black:#111111;
@@ -67,9 +68,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding:2rem;
-  margin: 0 5rem;
-
+  padding:2rem 9rem;
 }
 .nav-links, .hero{
   display: flex;
@@ -88,6 +87,23 @@ header{
   margin-left: 7px;
   font-size:12px;
 }
+.mobile-menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:1rem;
+}
+.mobile-menu .fa-bars, #mobile-nav, .fa-times{
+  display: none;
+}
+.fa-bars{
+  font-size:30px;
+  cursor: pointer;
+}
+.fa-bars:hover{
+  transform: scale(1.1);
+}
+
 .ctareq{
   width: 14rem;
   height:4rem;
@@ -121,43 +137,6 @@ header{
   color: #6FC247;
 }
 /* Dropdowns*/
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  position: absolute;
-  cursor: pointer;
-  top: calc(100% + 10px); /* Adjust as needed */
-  left: 0;
-  width: 170px;
-  height: auto; /* Changed to auto */
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  display: none;
-  flex-direction: column;
-  gap: 1rem;
-  border-radius: 5px;
-}
-
-.dropdown:hover .dropdown-content {
-  display: flex;
-  flex-direction: column; /* Added */
-}
-
-.dropdown-content a {
-  display: block;
-  color: #333;
-  text-decoration: none;
-  padding: 5px 0;
-}
-
-.dropdown-content a:hover {
-  background-color: #f4f4f4;
-}
-
 .nav-links .dropdown i {
   transition: transform 0.3s ease;
 }
@@ -180,7 +159,7 @@ main{
   margin: 0 5rem;
 }
 .hero{
-  width:700px;
+  /* width:700px; */
   flex-direction: column;
   margin: 2rem auto;
 }
@@ -210,13 +189,30 @@ main{
 .cta2 a{
   color: var(--btn-green);
 }
+
+/* ad-hero */
+.ad-hero{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.ad-hero img{
+  width: 100%;
+  height: auto;
+}
+
 .partnership{
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 2rem auto;
   text-align: center;
+}
+.partner-title{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .partner-title h3{
   font-size:1.5rem;
@@ -225,23 +221,23 @@ main{
 .partner-title p{
   width: 90%;
 }
+/* Sponsors */
 .sponsors{
   display: flex;
   align-items: center;
   justify-content:center;
   flex-direction: column;
   gap:.8rem;
-  margin: 2rem 0;
+  margin: 2rem 6rem;
 }
 .sponsor-row{
-  display: flex;
-  align-items: center;
-  justify-content:space-evenly;
+  display: grid;
+  grid-template-columns:repeat(4, 1fr);
   gap:.8rem;
 }
 .sponsor-row .icons{
   cursor: pointer;
-  width: 270px;
+  width: 100%;
   height: 100px;
   background-color:var(--bgc);
   display: flex;
@@ -340,6 +336,8 @@ main{
   margin-top:.5rem;
   width: 80%;
 }
+
+
 footer{
   background-color: var(--black);
   color: var(--defbg);
@@ -427,3 +425,96 @@ footer{
   color: white;
 }
 
+/* Responsive styles for tablets */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 2rem 3rem;
+  }
+  .sponsors{
+  margin: 2rem;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  
+  #mobile-nav, .mobile-menu .fa-bars{
+    display: block;
+  }
+  
+  #mobile-invisible{
+    display: none;
+  }
+  .nav-menu{
+    position: absolute;
+    background-color:white;
+    box-shadow: var(--bxs);
+    left: 0;
+    top:-200rem;
+    right: 0;
+    width: 100%;
+    opacity: 0;
+    transition: top 0.3s ease, opacity 0.3s ease;
+    z-index: 100;
+  }
+  .nav-menu.active{
+    top: 0;
+    opacity: 1
+  }
+  .nav-links{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3rem;
+  }
+  .fa-times{
+    display: block;
+    position: absolute;
+    right:3rem;
+    top: 2rem;
+    font-size:30px;
+    cursor: pointer;
+  }
+  main{
+    margin: 0 2rem;
+  }
+  .sponsors{
+    margin: 2rem 3rem;
+  }
+  .sponsor-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small devices */
+@media (max-width: 468px){
+  .ctareq {
+    width: 12rem;
+    height:3.5rem;
+    font-size:14px;
+  }
+  .hero-title{
+    font-size: 1.7rem;
+  }
+  .partner-title h3{
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+  .sponsors{
+    margin: 2rem 1.5rem;
+  }
+  .sponsor-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Smallest */
+@media (max-width:400px){
+  .navbar {
+    padding: 2rem 1.5rem;
+}
+  .hero-btns{
+    flex-direction: column;
+  }
+  .sponsor-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
