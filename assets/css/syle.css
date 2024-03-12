@@ -438,7 +438,7 @@ main{
     margin: 0;
   }
   .records{
-    margin: 3rem 4rem;
+    margin: 3rem 3rem;
   }
   .rec-box .rec-text {
     gap:3rem;
@@ -450,7 +450,7 @@ main{
 }
 
 /* Small devices */
-@media (max-width: 468px){
+@media (max-width: 568px){
   .ctareq {
     width: 12rem;
     height:3.5rem;
