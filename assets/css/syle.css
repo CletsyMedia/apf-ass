@@ -156,7 +156,7 @@ header{
 }
 
 main{
-  margin: 0 5rem;
+  margin: 0 9rem;
 }
 .hero{
   /* width:700px; */
@@ -267,7 +267,7 @@ main{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding:4rem;
+  padding:4rem 5.5rem;
   gap:2.5rem;
 }
 .valutico-info{
@@ -367,15 +367,24 @@ main{
   .navbar {
     padding: 2rem 3rem;
   }
+  main {
+    margin: 0 4rem;
+}
+  .hero-title{
+    width:90%;
+  }
+  .hero-text{
+    width: 80%;
+  }
   .sponsors{
   margin: 2rem;
   }
   
 }
 
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   .navbar{
-    padding: 2rem 3rem;
+    padding: 2rem;
   }
   .mobile-menu .fa-bars{
     display: block;
@@ -406,19 +415,19 @@ main{
   .nav-links{
     flex-direction: column;
     align-items: flex-start;
-    padding: 3rem;
+    padding: 3rem 1.5rem;
   }
   .fa-times{
     display: block;
     position: absolute;
-    right:3rem;
+    right:2rem;
     top: 2rem;
     font-size:30px;
     cursor: pointer;
   }
   
   main{
-    margin: 0 2rem;
+    margin: 0 1rem;
   }
   .hero-title{
     font-size: 2.5rem;
@@ -428,10 +437,13 @@ main{
     width: 75%;
   }
   .sponsors{
-    margin: 2rem 3rem;
+    margin: 2rem 1rem;
   }
   .sponsor-row {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .valutico{
+    padding: 4rem 2.5rem;
   }
   .valutico-info{
     width:90%;
@@ -439,9 +451,11 @@ main{
   .boxes{
     flex-direction: column;
     margin: 0;
+    width: 100%;
   }
+  
   .records{
-    margin: 3rem 3rem;
+    margin: 3rem 2rem;
   }
   .rec-box .rec-text {
     gap:3rem;
@@ -480,7 +494,7 @@ main{
     grid-template-columns: repeat(2, 1fr);
   }
   .valutico{
-    padding: 4rem 2.5rem;
+    padding: 4rem 2rem;
   }
   .valutico-info{
     width:100%;
@@ -488,6 +502,7 @@ main{
   .rec-box{
     display: flex;
     flex-direction: column-reverse;
+    gap:.5rem;
   }
 }
 /* Smallest */
